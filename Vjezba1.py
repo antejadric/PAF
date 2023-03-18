@@ -106,7 +106,7 @@ def jednadzba_pravca():
     
 print(jednadzba_pravca())
 
-#Zadatak5
+#5. zadatak
 
 import matplotlib
 import matplotlib.pyplot as plt
