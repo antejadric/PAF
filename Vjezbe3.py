@@ -1,20 +1,20 @@
 #Vjezbe3.
 #Zadatak 1.
 #a)
-a=5.0-4.935 #očekivani rezlutat 0.065
+a=5.0-4.935 #ocekivani rezlutat 0.065
 print(a)#rezlutat je 0,06500000000000039
-#Razlog zašto rezlutat nije 0.065 već 0,06500000000000039 je 
-# pogreška u zaokruživanju. Broj kao što je 4.935 se u 
-# pythonu ne gleda kao decimalni već kao binarni broj
-#. Samo s brojevima oblika 1/2^{n} može idealno računati sve ostalo je aproksimacija, aproksimacija kojom se približava toj vrijednosti što je više moguće.
+#Razlog zasto rezlutat nije 0.065 vec 0,06500000000000039 je 
+# pogreska u zaokruzivanju. Broj kao sto je 4.935 se u 
+# pythonu ne gleda kao decimalni vec kao binarni broj
+#. Samo s brojevima oblika 1/2^{n} moze idealno racunati sve ostalo je aproksimacija, aproksimacija kojom se priblizava toj vrijednosti sto je vise moguce.
 
 #b)
 b=0.1+0.2+0.3
 print(b)
 print('ovdje staje 1.zdk')
 #rezultat je 0.6000000000000001
-#Razlog rezultat jest taj što, baš kao i u prvom slučaju, Python ne vidi naše desimalne brojeve kao takve već kao njihovu binarnu
-#reprezentaciju koja nije točno jednaka dotičnimk brojevima pa samim tim ni njihov zbroj neće biti.
+#Razlog rezultat jest taj sto, bas kao i u prvom slucaju, Python ne vidi nase desimalne brojeve kao takve već kao njihovu binarnu
+#reprezentaciju koja nije tocno jednaka doticnimk brojevima pa samim tim ni njihov zbroj neće biti.
 
 #Zadatak 2.
 br=0
@@ -62,3 +62,9 @@ while br==0:
         k=1/3
         br=br-k
     print('Rezultat od 200 oduzetih iteracija broju 5 je {}.'.format(br))
+
+# Primjecujemo da pogreska u racunanju raste porastom iteracija gdje za 200 iteracija tocno je do dvanaeste decimale, za 2000 do desete, a za 20 000 do osme decimale.
+# Razlog toga jest sto program racuna vaj niz racunskih operacija na nacin da ih aproksimira s obzirom da se 1/3 ne moze zapisati kao 1/2^{n}.  
+
+#Zadatak 3.
+print('test')
