@@ -55,3 +55,10 @@ while br==0:
         j=1/3
         br=br-j
     print('Rezultat od 200 oduzetih iteracija broju 5 je {}.'.format(br))
+
+    br=5
+
+    for k in range(N3):
+        k=1/3
+        br=br-k
+    print('Rezultat od 200 oduzetih iteracija broju 5 je {}.'.format(br))
