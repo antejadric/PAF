@@ -65,6 +65,3 @@ while br==0:
 
 # Primjecujemo da pogreska u racunanju raste porastom iteracija gdje za 200 iteracija tocno je do dvanaeste decimale, za 2000 do desete, a za 20 000 do osme decimale.
 # Razlog toga jest sto program racuna vaj niz racunskih operacija na nacin da ih aproksimira s obzirom da se 1/3 ne moze zapisati kao 1/2^{n}.  
-
-#Zadatak 3.
-print('test')
