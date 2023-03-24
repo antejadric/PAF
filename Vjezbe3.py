@@ -1,20 +1,20 @@
 #Vjezbe3.
 #Zadatak 1.
 #a)
-a=5.0-4.935 #očekivani rezlutat 0.065
+a=5.0-4.935 #ocekivani rezlutat 0.065
 print(a)#rezlutat je 0,06500000000000039
-#Razlog zašto rezlutat nije 0.065 već 0,06500000000000039 je 
-# pogreška u zaokruživanju. Broj kao što je 4.935 se u 
-# pythonu ne gleda kao decimalni već kao binarni broj
-#. Samo s brojevima oblika 1/2^{n} može idealno računati sve ostalo je aproksimacija, aproksimacija kojom se približava toj vrijednosti što je više moguće.
+#Razlog zasto rezlutat nije 0.065 vec 0,06500000000000039 je 
+# pogreska u zaokruzivanju. Broj kao sto je 4.935 se u 
+# pythonu ne gleda kao decimalni vec kao binarni broj
+#. Samo s brojevima oblika 1/2^{n} moze idealno racunati sve ostalo je aproksimacija, aproksimacija kojom se priblizava toj vrijednosti sto je vise moguce.
 
 #b)
 b=0.1+0.2+0.3
 print(b)
 print('ovdje staje 1.zdk')
 #rezultat je 0.6000000000000001
-#Razlog rezultat jest taj što, baš kao i u prvom slučaju, Python ne vidi naše desimalne brojeve kao takve već kao njihovu binarnu
-#reprezentaciju koja nije točno jednaka dotičnimk brojevima pa samim tim ni njihov zbroj neće biti.
+#Razlog rezultat jest taj sto, bas kao i u prvom slucaju, Python ne vidi nase desimalne brojeve kao takve vec kao njihovu binarnu
+#reprezentaciju koja nije tocno jednaka doticnimk brojevima pa samim tim ni njihov zbroj nece biti.
 
 #Zadatak 2.
 br=0
@@ -54,4 +54,13 @@ while br==0:
     for j in range(N2):
         j=1/3
         br=br-j
-    print('Rezultat od 200 oduzetih iteracija broju 5 je {}.'.format(br))
+    print('Rezultat od 2000 oduzetih iteracija broju 5 je {}.'.format(br))
+    
+    br=5
+
+    for k in range(N3):
+        k=1/3
+        br=br-k
+    print('Rezultat od 20000 oduzetih iteracija broju 5 je {}.'.format(br))
+#U ovom primjeru je vidljivo kako tocnost rezultata opada brojem iteracija gdje za 200 ponmavljanja rezultat ce biti tocan do 12-este decimale dokle onaj za 20000 ce biti tocan do 8.
+# Razlog pogreske je taj sto nas rezultat nije nasatao sumiranjem brojeva koji dolaze u obliku 1/2^{n} vec u obliku broja 1/3 sto iziskuje izracun doticnih uzastopnih radnji kroz aproksimaciju.
