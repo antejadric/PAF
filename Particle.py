@@ -30,7 +30,7 @@ class Particle:
     def range(self, dt=0.001):
         while self.y_0[-1] >= 0:
             self.__move(dt)
-        return print('Domet iznosi {} m.'.format(self.x_0[-1]))
+        return self.x_0[-1]
     
     def plot_trajectory(self):
         plt.plot(self.x_0, self.y_0)
