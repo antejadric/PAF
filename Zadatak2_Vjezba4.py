@@ -2,7 +2,7 @@
 import Particle as P
 import numpy as np
 import matplotlib.pyplot as plt
-vri=np.linspace(0.01, 0.2, 999)
+vri=np.arange(0.01, 0.2, 0.0001)
 ad=[]
 k = np.radians(60)
 for t in vri:
