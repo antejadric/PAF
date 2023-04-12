@@ -9,7 +9,7 @@ k = np.radians(60)
 domet = 100*np.sin(2*k)/9.81 #formula za analiticko rjesenje iz of1 (ne treba se racunati za svaki dt, jer ovo nije numericko)
 #print(domet)
 
-#numericko rj
+#numericko rjesenje
 num = []
 vri = np.linspace(0.01, 0.2, 999)
 for dt in vri:
