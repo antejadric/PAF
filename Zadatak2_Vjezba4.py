@@ -2,28 +2,27 @@
 import Particle as P
 import numpy as np
 import matplotlib.pyplot as plt
-vri=np.arange(0.01, 0.2, 0.0001)
-ad=[]
-k = np.radians(60)
-for t in vri:
-    d = 10*np.cos(k)*t
-    ad.append(d)
-    f=sum(ad)
-#print(f)
+p = Particle(10, 60, 0, 0)
 
+#analiticko rj
+k = np.radians(60)
+domet = 100*np.sin(2*k)/9.81 #formula za analiticko rjesenje iz of1 (ne treba se racunati za svaki dt, jer ovo nije numericko)
+#print(domet)
+
+#numericko rj
 num = []
+vri = np.linspace(0.01, 0.2, 999)
 for dt in vri:
-    p = P.Particle(10, 60, 0, 0)
     a = p.range(dt)
     num.append(a)
     p.reset()
 #print(num)
 
 er=[]
-for i in range(len(ad)):
-    gr=abs(f-num[i])/f*100
+for i in range(len(num)):
+    gr=((abs(domet-num[i]))/domet)*100
     er.append(gr)
-#print(f)
+#print(er)
 
 plt.plot(vri, er)
 plt.title('Ovisnost odstupanja o koraku dt')
