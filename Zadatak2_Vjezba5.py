@@ -21,10 +21,11 @@ F = sp.integrate(f, (t, dgr, ggr)) #rezultat iznosi 11/3
 g = float(F)
 analiticko_rj.append(g)
 
-i = cal.integracije(a=0, b=1, n=50)
+i = cal.integracije(a=0., b=1., n=50.)
 granicni_integrali = i.integracijaI(f=fzint)
-print('Gornja granica iznosi: ', granicni_integrali[1])
-print('Donja granica iznosi: ', granicni_integrali[0])
+print('test')
+print('Gornja granica iznosi: '.format(granicni_integrali[1]))
+print('Donja granica iznosi: '.format(granicni_integrali[0]))
 
 trp = i.integracijaII(f=fzint)
 print('Kroz trapeznu formulu iznos integrala je: {}.'.format(trp))
@@ -33,7 +34,7 @@ donja=[]
 trap_form=[]
 n=np.linspace(15,100,25)
 for l in n:
-    i = cal.integracije(a=0, b=1, n=int(l))
+    i = cal.integracije(a=0., b=1., n=int(l))
     c=i.integracijaI(f=fzint)
     gornja.append(c[0])
     donja.append(c[1])
@@ -42,7 +43,7 @@ for l in n:
 plt.plot(n, donja, 'o',color='black' ,label="Donja granica")
 plt.plot(n, gornja, 'o',color='red' ,label="Gornja granica")
 plt.plot(n, trap_form, 'o',color='blue' ,label="Trapezna formula")
-plt.plot(n, [analiticko_rj[0]]*len(n), '-', color='magenta', label="Analiticko rješenje")
+plt.plot(n, [analiticko_rj[0]]*len(n), '-', color='magenta', label="Analiticko rjesenje")
 plt.title('Upotreba integracije')
 plt.xlabel('Broj koraka N')
 plt.ylabel('Iznos integracije')
