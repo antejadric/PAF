@@ -29,7 +29,7 @@ class HarmonicOscillator:
 
     def Grafovi(self, t):
         HarmonicOscillator.Izracun(self, t)
-        fig, ax = plt.subplots(nrows=1, ncols=3)
+        fig, ax = plt.subplots(nrows=3, ncols=1)
 
         ax[0].plot(self.t, self.x)
         ax[0].set_title('x-t graf')
@@ -46,4 +46,5 @@ class HarmonicOscillator:
         ax[2].set_xlabel('t [s]')
         ax[2].set_ylabel('a [m/s^2]')
 
-    
+        plt.show()
+
