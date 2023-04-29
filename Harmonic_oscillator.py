@@ -19,7 +19,7 @@ class HarmonicOscillator:
             self.v.append(self.v[-1] + self.a[-1] * self.dt)
             self.x.append(self.x[-1] + self.v[-1] * self.dt)
             self.t.append(self.t[-1] + self.dt)
-
+        return self.t,self.x,self.v,self.a
 
     def Informacije(self):
         print('vremenski intervali: {}'.format(self.t))
