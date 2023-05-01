@@ -2,7 +2,7 @@
 #provjera preciznosti(1.Zdk)
 import Harmonic_oscillator as ho 
 import numpy as np 
-import matplotlip.pyplot as plt 
+import matplotlib.pyplot as plt 
 
 hosn=ho.HarmonicOscillator(x=3,v=2,k=1,dt=200,m=3)
 ha = ho.HarmonicOscillator(x=3, v=2, k=1, dt=0.01, m=3)
