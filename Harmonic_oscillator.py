@@ -49,7 +49,7 @@ class HarmonicOscillator:
         plt.show()
 
     def Numericki_Period(self):
-        HarmonicOscillator.Izracun(self, 4 * np.pi * np.sqrt(self.m / self.k))
+        HarmonicOscillator.Izracun(self, 2 * np.pi * np.sqrt(self.m / self.k))
         t0 = t1 = None
         for i in range(len(self.x)):
             if not t0 and self.x[0]/self.x[i] < 0:
