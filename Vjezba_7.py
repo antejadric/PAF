@@ -13,7 +13,7 @@ class Projectile:
         self.x = [x]
         self.y = [y]
         self.g = 9.81  # ubrzanje gravitacije (m/s^2)
-        self.rho = 1.225  # gustoća zraka (kg/m^3)
+        self.rho = 1.225  # gustoća zraka (kg/m^3) na nadmorskoj visini
         self.vx = [self.v * np.cos(self.th)]
         self.vy = [self.v * np.sin(self.th)]
         self.ax = [-abs(self.rho * self.Cd * self.A * (self.vx[-1])**2 / (2 * self.m))]
