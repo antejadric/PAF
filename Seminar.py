@@ -7,45 +7,58 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-class Sila_kao_f:
-    def __init__(self, v, x, t):
-        self.x = x
-        self.v = v
-        self.t = t
-        self.F = np.array([self.v, self.x, self.t])
+class Num_racunanje:
+    def __init__(self, x, v, m, dt,t):
+        self.m = m
+        self.dt = dt
+        self.t=t
+        self.x=[x]
+        self.v=[v]
+        self.a=[f(self.x[-1],self.v[-1],self.t)/ self.m]
+        self.vr=[0]
+
+
+
+    def VratInfo(self):
+        print('x={}'.format(self.x))
+        print('v={}'.format(self.v))
+        print('a={}'.format(self.a))
+
+
+    def Euler(self, f):
         
-    class Implementacija:
-        def __init__(self, gk, m, k, dt):
-            self.F = gk.F
-            self.m = m
-            self.dt = dt
-            self.Sila=[]
-            self.a=[]
-            self.x=[gk.F[1]]
-            self.v=[gk.F[0]]
-            self.k=k
-            self.ss=[]
+        for i in np.arange(0,self.t,self.dt):
+            self.a.append(f(self.x[-1],self.v[-1],self.t)/ self.m)
+            self.v.append(self.v[-1] + self.a[-1] * self.dt)
+            self.x.append(self.x[-1] + self.v[-1] * self.dt)
+            self.vr.append(self.t+self.dt)
 
+
+    def Graf(self):
+        Num_racunanje.Euler(self,f)
+        fig, ax = plt.subplots(nrows=3, ncols=1)
+
+        ax[0].plot(self.vr, self.x)
+        ax[0].set_title('x-t graf')
+        ax[0].set_xlabel('t [s]')
+        ax[0].set_ylabel('x [m]')
+
+        ax[1].plot(self.vr, self.v)
+        ax[1].set_title('v-t graf')
+        ax[1].set_xlabel('t [s]')
+        ax[1].set_ylabel('v [m/s]')
+
+        ax[2].plot(self.vr, self.a)
+        ax[2].set_title('a-t graf')
+        ax[2].set_xlabel('t [s]')
+        ax[2].set_ylabel('a [m/s^2]')
         
-        def VratInfo(self):
-            print('F={}'.format(self.F))
-            print('a={}'.format(self.a))
-            print('v={}'.format(self.v))
-            print('x={}'.format(self.x))
-            print('Promjenjiva_sila={}'.format(self.ss))
+        plt.show()
+    
 
 
-            
-        def konstF(self):
-            for i in np.arange(0,self.F[2],self.dt):
-                self.Sila.append(sum(self.F))
-                self.a.append(self.Sila[-1]/self.m)
-                self.v.append(self.x[-1]+self.a[-1]*self.dt)
-                self.x.append(self.x[-1]+self.v[-1]*self.dt)
+def f(v, x, t):
+    return 5
 
-        def Euler(self):
-            for i in np.arange(0,self.F[2],self.dt):
-                self.a.append(-self.k / self.m * self.x[-1])
-                self.v.append(self.v[-1] + self.a[-1] * self.dt)
-                self.x.append(self.x[-1] + self.v[-1] * self.dt)
-                self.ss.append(-self.k*self.x[-1])
+u=Num_racunanje(2,3,4,0.01,20)
+u.Graf()
