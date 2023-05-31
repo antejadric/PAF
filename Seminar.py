@@ -6,14 +6,16 @@
 #const) i harmonickog oscilatora (F = −kx).
 import numrac_vxt as N
 
-def f1(v, x, t):
+def f1(v, x, t):#za konstantnu silu
     return 5
 
-u = N.Num_racunanje(x=3, v=2, m=3, dt=0.01, t=20)
+u = N.Num_racunanje(x=3, v=2, m=3, dt=0.01, t=20, f=f1)
 u.Graf(f1)
 
-def f2(v, x, t):
+
+
+def f2(v, x, t):#za harmonijski oscilator.
     return -2 * x
 
-h = N.Num_racunanje(x=3, v=2, m=3, dt=0.01, t=20)
+h = N.Num_racunanje(x=3, v=2, m=3, dt=0.01, t=20, f=f2)
 h.Graf(f2)
