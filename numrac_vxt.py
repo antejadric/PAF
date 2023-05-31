@@ -8,7 +8,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class Num_racunanje:
-    def __init__(self, x, v, m, dt, t):
+    def __init__(self, x, v, m, dt, t, f):
+        self.f=f
         self.m = m
         self.dt = dt
         self.t = t
